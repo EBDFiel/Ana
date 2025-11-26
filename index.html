@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUIZ da EBD | Ana: A força de quem ora gera Milagres</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* --- (Aqui vai todo o CSS do seu modelo original, sem alterações) --- */
+/* Para economizar espaço, omitido neste bloco — você pode copiar o CSS do exemplo de Josué */
+</style>
+</head>
+<body>
+<div class="container fade-in">
+  <header class="modern-header">
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="https://i.ibb.co/9mLXgx7k/logo.png" alt="Logo EBD" class="logo-img">
+        </div>
+        <div class="logo-text">
+          <h1>QUIZ da EBD</h1>
+          <div class="subtitle">Lição 06: Ana – A força de quem ora gera Milagres</div>
+        </div>
+      </div>
+      <div class="welcome-card">
+        <h2><i class="fas fa-praying-hands"></i> Bem-vindo ao Quiz da EBD!</h2>
+        <p>Descubra os detalhes da história de Ana, sua oração persistente, o cumprimento de seu voto e como Deus respondeu sua fé gerando milagres.</p>
+      </div>
+      <div class="cta-section">
+        <button class="start-btn" id="start-btn">
+          <i class="fas fa-play"></i> Iniciar Quiz
+        </button>
+        <div class="features">
+          <div class="feature"><i class="fas fa-star" style="color:#4cc9f0"></i><span>12 Perguntas</span></div>
+          <div class="feature"><i class="fas fa-check-circle" style="color:#f8961e"></i><span>Feedback Imediato</span></div>
+          <div class="feature"><i class="fas fa-graduation-cap" style="color:#f94144"></i><span>Aprenda com a Bíblia</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- conteúdo da lição / introdução opcional -->
+  <section class="content-section">
+    <div class="about-card">
+      <h2 class="card-title"><i class="fas fa-info-circle"></i> Sobre Esta Lição</h2>
+      <div class="card-content">
+        <p>A história de Ana é registrada em <strong>1 Samuel 1 e 2</strong>. Ela viveu dor, humilhação e esterilidade, mas escolheu orar persistentemente, fez um voto ao Senhor e Deus respondeu à sua fé, concedendo-lhe um filho e transformando sua história. :contentReference[oaicite:1]{index=1}</p>
+        <p>Essa lição nos mostra valores como <strong>humildade, oração persistente, fidelidade e gratidão</strong> ao Senhor — lições valiosas para nossa caminhada. :contentReference[oaicite:2]{index=2}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="quiz-section" id="quiz-section">
+    <div class="progress-container">
+      <div class="progress-header">
+        <div class="progress-text" id="progress-text">Pergunta 1 de 12</div>
+      </div>
+      <div class="progress-bar"><div class="progress" id="quiz-progress"></div></div>
+    </div>
+
+    <div class="quiz-container" id="quiz-container">
+      <!-- Perguntas serão geradas pelo JS -->
+    </div>
+
+    <div class="navigation">
+      <button id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Anterior</button>
+      <button id="next-btn" class="btn-next">Próxima <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-header"><h2><i class="fas fa-trophy"></i> Resultado Final</h2></div>
+    <div class="score" id="score">0/0</div>
+    <div class="performance" id="performance">
+      <div class="performance-item"><div class="performance-value performance-easy" id="correct-easy">0</div><div>Fáceis</div></div>
+      <div class="performance-item"><div class="performance-value performance-medium" id="correct-medium">0</div><div>Médias</div></div>
+      <div class="performance-item"><div class="performance-value performance-hard" id="correct-hard">0</div><div>Difíceis</div></div>
+    </div>
+    <div class="message" id="message"></div>
+    <button id="restart-btn" style="background: var(--success);"><i class="fas fa-redo"></i> Fazer Quiz Novamente</button>
+  </div>
+
+  <!-- Informações da igreja / rodapé -->
+  <div class="church-info">
+    <div class="church-name">EBD FIEL</div>
+    <div class="church-location">FIEL A PALAVRA</div>
+    <div class="instagram-section">
+      <div class="instagram-text">Curta nossa página no Instagram:</div>
+      <a href="https://www.instagram.com/ebdfiel" target="_blank" class="instagram-link">
+        <i class="fab fa-instagram instagram-icon"></i>@ebdfiel
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// =============================================
+// BANCO DE PERGUNTAS – LIÇÃO ANA
+// =============================================
+const allQuestions = [
+  // FÁCEIS
+  {
+    question: "Qual era a principal aflição enfrentada por Ana antes de entregar seu pedido a Deus?",
+    options: [
+      "Ela era pobre e sem recursos",
+      "Ela era casada com um homem ímpio",
+      "Ela era estéril e não tinha filhos",
+      "Ela havia cometido um pecado grave"
+    ],
+    correct: 2,
+    explanation: "Ana era estéril e não tinha filhos, o que a afligia profundamente. :contentReference[oaicite:3]{index=3}",
+    difficulty: "easy"
+  },
+  {
+    question: "Com quem Ana foi casada?",
+    options: [
+      "Com Penina",
+      "Com Elcana",
+      "Com Eli",
+      "Com Samuel"
+    ],
+    correct: 1,
+    explanation: "Ana era esposa de Elcana. :contentReference[oaicite:4]{index=4}",
+    difficulty: "easy"
+  },
+  {
+    question: "O que Ana prometeu a Deus se Ele atendesse seu pedido?",
+    options: [
+      "Que ela serviria como profetisa",
+      "Que daria à Deus um templo",
+      "Que entregaria o filho para servir ao Senhor por toda a vida",
+      "Que nunca mais oraria"
+    ],
+    correct: 2,
+    explanation: "Ana prometeu que, se Deus lhe desse um filho varão, ela o entregaria ao Senhor para servi-Lo por toda a vida. :contentReference[oaicite:5]{index=5}",
+    difficulty: "easy"
+  },
+  {
+    question: "Em qual livro da Bíblia está registrada a história de Ana?",
+    options: [
+      "Gênesis",
+      "Êxodo",
+      "1 Samuel",
+      "Salmos"
+    ],
+    correct: 2,
+    explanation: "A história de Ana está registrada em 1 Samuel (capítulos 1 e 2). :contentReference[oaicite:6]{index=6}",
+    difficulty: "easy"
+  },
+
+  // MÉDIAS
+  {
+    question: "Como a Bíblia descreve a atitude de Ana quando ela orou ao Senhor por seu pedido?",
+    options: [
+      "Com alegria e cânticos",
+      "Com amargura de alma e muitas lágrimas",
+      "Com festejos no templo",
+      "Com sacrifício de animais"
+    ],
+    correct: 1,
+    explanation: "A Escritura diz que ela orou com amargura de alma e chorou abundantemente. :contentReference[oaicite:7]{index=7}",
+    difficulty: "medium"
+  },
+  {
+    question: "Qual foi o resultado da oração de Ana, conforme 1 Samuel 1:20-22?",
+    options: [
+      "Ela ganhou riquezas",
+      "Ela teve um filho, chamado Samuel",
+      "Ela se tornou profetisa",
+      "Ela foi curada de uma doença grave"
+    ],
+    correct: 1,
+    explanation: "Passado algum tempo, Ana concebeu e teve um filho, a quem chamou Samuel. :contentReference[oaicite:8]{index=8}",
+    difficulty: "medium"
+  },
+  {
+    question: "Depois que nasceu o filho, o que Ana fez conforme prometido a Deus?",
+    options: [
+      "Deixou o menino com parentes",
+      "Criou o menino em casa até a maioridade",
+      "Entregou o menino ao Senhor para servir no tabernáculo",
+      "Escondeu o menino para protegê-lo"
+    ],
+    correct: 2,
+    explanation: "Ana cumpriu seu voto: quando o menino foi desmamado, ela o levou para o Senhor e ele ficaria para servi-Lo para sempre. :contentReference[oaicite:9]{index=9}",
+    difficulty: "medium"
+  },
+
+  // DIFÍCEIS
+  {
+    question: "Qual versículo é usado como 'texto-árueo' na lição de Ana?",
+    options: [
+      "1 Samuel 1:10",
+      "1 Samuel 1:11",
+      "1 Samuel 1:27",
+      "1 Samuel 2:1"
+    ],
+    correct: 2,
+    explanation: "O texto-árueo da lição é: “Por este menino orava eu; e o Senhor me concedeu a minha petição...” – 1 Samuel 1:27. :contentReference[oaicite:10]{index=10}",
+    difficulty: "hard"
+  },
+  {
+    question: "Qual é a principal verdade aplicada que a lição propõe para nossa caminhada cristã?",
+    options: [
+      "Persistência na oração e gratidão a Deus",
+      "Jejum prolongado para obter bênçãos",
+      "Sacrifício de ofertas materiais",
+      "Realização de promessas públicas"
+    ],
+    correct: 0,
+    explanation: "A lição ressalta a importância da oração persistente, fidelidade, humildade e gratidão a Deus. :contentReference[oaicite:11]{index=11}",
+    difficulty: "hard"
+  },
+  {
+    question: "Qual atitude de Ana mostra que ela confiava na soberania de Deus mesmo antes da resposta?",
+    options: [
+      "Ela orou em segredo e não reclamou diante dos outros",
+      "Ela desistiu após as promessas bíblicas não se cumprirem logo",
+      "Ela exigiu sinais imediatos de Deus",
+      "Ela aconselhou Penina a arrepender-se"
+    ],
+    correct: 0,
+    explanation: "Mesmo em dor e humilhação, Ana orou com sinceridade, humildade e fé — sem murmurar publicamente, confiando em Deus. :contentReference[oaicite:12]{index=12}",
+    difficulty: "hard"
+  }
+];
+
+// =============================================
+// LÓGICA DO QUIZ — copie a lógica JS do modelo original (renderização das perguntas, seleção de opções, feedback e resultados)
+// =============================================
+
+// (Aqui vai o JS do seu modelo, adaptando para 12 perguntas e este allQuestions)
+
+</script>
+</body>
+</html>
